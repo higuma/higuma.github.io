@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ImageMagick(1:インストール編) | I code therefore...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ImageMagickとは画像処理用ソフトウエアライブラリ。
+http://www.imagemagick.org/
+
+スペルが変だがこれで正しい(ImageMagicではない)。
+
+基本的な使用法はコマンドラインツールで、UnixシェルやWindowsコマンドプロンプトなどから利用する。もう一つの利用法はライブラリで、開発環境経由でアプリケーションの内部処理に用いられる。
+
+特にUnix系アプリ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ImageMagick(1:インストール編)">
+<meta property="og:url" content="http://higuma.github.io/2016/08/31/imagemagick-1/index.html">
+<meta property="og:site_name" content="I code therefore...">
+<meta property="og:description" content="ImageMagickとは画像処理用ソフトウエアライブラリ。
+http://www.imagemagick.org/
+
+スペルが変だがこれで正しい(ImageMagicではない)。
+
+基本的な使用法はコマンドラインツールで、UnixシェルやWindowsコマンドプロンプトなどから利用する。もう一つの利用法はライブラリで、開発環境経由でアプリケーションの内部処理に用いられる。
+
+特にUnix系アプリ">
+<meta property="og:updated_time" content="2016-09-11T13:18:31.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ImageMagick(1:インストール編)">
+<meta name="twitter:description" content="ImageMagickとは画像処理用ソフトウエアライブラリ。
+http://www.imagemagick.org/
+
+スペルが変だがこれで正しい(ImageMagicではない)。
+
+基本的な使用法はコマンドラインツールで、UnixシェルやWindowsコマンドプロンプトなどから利用する。もう一つの利用法はライブラリで、開発環境経由でアプリケーションの内部処理に用いられる。
+
+特にUnix系アプリ">
+<meta name="twitter:creator" content="@yujimiyane">
+  
+    <link rel="alternate" href="/atom.xml" title="I code therefore..." type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">I code therefore...</h1>
+  
+    <p class="lead blog-description">programming, signal processing, art, music, etc.</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-imagemagick-1" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      ImageMagick(1:インストール編)
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/08/31/imagemagick-1/" class="article-date"><time datetime="2016-08-31T13:54:13.000Z" itemprop="datePublished">2016-08-31</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Graphics/">Graphics</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ImageMagickとは"><a href="#ImageMagickとは" class="headerlink" title="ImageMagickとは"></a>ImageMagickとは</h2><p>画像処理用ソフトウエアライブラリ。</p>
+<p><a href="http://www.imagemagick.org/" target="_blank" rel="external">http://www.imagemagick.org/</a></p>
+<blockquote>
+<p>スペルが変だがこれで正しい(ImageMagicではない)。</p>
+</blockquote>
+<p>基本的な使用法はコマンドラインツールで、UnixシェルやWindowsコマンドプロンプトなどから利用する。もう一つの利用法はライブラリで、開発環境経由でアプリケーションの内部処理に用いられる。</p>
+<blockquote>
+<p>特にUnix系アプリは内部処理をImageMagickで行っているものが多い。</p>
+</blockquote>
+<p>この分野の現役ライブラリでは最も古くかつ今でもメジャーなもので、画像処理として考えられる機能はほぼ全て網羅している(以下<a href="https://en.wikipedia.org/wiki/ImageMagick#Features_and_capabilities" target="_blank" rel="external">Wikipedia(英語版)</a>を元に噛み砕いて要約)。</p>
+<ul>
+<li>ファイル形式変換<ul>
+<li>現行主要フォーマットは完全対応、マイナーフォーマットもほぼ網羅</li>
+<li>新しいフォーマット(例えば<a href="https://www.gimp.org/" target="_blank" rel="external">GIMP</a>の<a href="https://en.wikipedia.org/wiki/XCF_(file_format" target="_blank" rel="external">XCF</a>)への対応も早い</li>
+</ul>
+</li>
+<li>画像変換<ul>
+<li>サイズ変更、切り取り、拡大縮小、回転、反転、変形</li>
+<li>色彩調整(明暗、コントラスト、RGB、Alpha, etc.)</li>
+<li>ぼかし、境界強調</li>
+<li>各種描画(外枠、文字列、図形等)</li>
+<li>特殊効果(たくさんあるので略)</li>
+</ul>
+</li>
+<li>アニメーション、モーフィング</li>
+<li>カラー量子化、ディザー処理、フーリエ変換</li>
+<li>これ以外にも山ほどある(以下略)</li>
+</ul>
+<p>使用例は次が詳しい。これを見れば画像処理として考えられることはほぼコンプリートしているのが分かると思う。</p>
+<p><a href="http://www.imagemagick.org/Usage/" target="_blank" rel="external">http://www.imagemagick.org/Usage/</a></p>
+<blockquote>
+<p>(参考) 要約和訳: <a href="http://qiita.com/mtakizawa/items/a74bd91f7b3835976461" target="_blank" rel="external">http://qiita.com/mtakizawa/items/a74bd91f7b3835976461</a></p>
+</blockquote>
+<p>ImageMagick自体にはユーザーインターフェースは付いていない(簡単なビューアのみ)。コマンドラインから実行するか、またはアプリの開発環境からライブラリを内部処理用に利用するという形で用いる。</p>
+<p>以下始めの一歩としてインストール方法から説明する。Linux系は特に難しい点はないが、Windowsは(インストール場所が自由なのが災いして)色々な注意点がたくさんある(そのせいで長くなってしまったので単独トピックにする)。</p>
+<h2 id="Linux-Unix系"><a href="#Linux-Unix系" class="headerlink" title="Linux(Unix系)"></a>Linux(Unix系)</h2><p>ImageMagickはUnix系の定番ライブラリで多くのアプリから利用されている。そのためLinuxディストリビューションにはプリインストールされていることが多い。次はUbuntu 16.04上の確認例(convertはImageMagickの画像変換コマンド)。</p>
+<pre><code>$ convert -version
+Version: ImageMagick 6.8.9-9 Q16 x86_64 2016-06-01 http://www.imagemagick.org
+Copyright: Copyright (C) 1999-2014 ImageMagick Studio LLC
+...以下略...
+</code></pre><blockquote>
+<p>(Ubuntuユーザー用参考): <code>apt-cache rdepends imagemagick</code>で依存性を逆引きするとLibreOfficeやgnupgなど多数のアプリがImageMagickを利用しているのが分かる。</p>
+</blockquote>
+<p>もし入っていなくてもパッケージマネージャを使える環境であれは簡単にインストールできる。Ubuntu(やその祖先のDebian)系ディストリビューションはapt-getを用いる。</p>
+<pre><code>$ sudo apt-get install imagemagick
+</code></pre><blockquote>
+<p>Macは持ってないがbrewを使えば同じようにできるはず(必要な人は自分で検索して調べてね)。</p>
+</blockquote>
+<p>興味がある人はソースからインストールしてもいい(よい学習教材にもなる)。次に書いてある通り行えばできる(丁寧な説明なのでまず失敗しないはず)。パッケージマネージャ(aptやHomebrew等)を利用できない場合もこの方法でインストールできる。</p>
+<p><a href="http://imagemagick.org/script/install-source.php#unix" target="_blank" rel="external">http://imagemagick.org/script/install-source.php#unix</a></p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>こちらはWindows特有のややこしい問題がいくつもあるので順番に詳しく説明する。まずWindows Binary Releaseから目的に合ったものをダウンロードする(これを書いている時点の最新バージョンは7.0.2)。</p>
+<p><a href="http://www.imagemagick.org/script/binary-releases.php#windows" target="_blank" rel="external">http://www.imagemagick.org/script/binary-releases.php#windows</a></p>
+<p>でも種類が多くて何を選べばいいか分からない人が多いはず。まとめてみた。</p>
+<ul>
+<li><code>Q8</code>と<code>Q16</code>は画素のビット深度の違い(今は<code>Q16</code>が定番)<ul>
+<li>Q16はQ8の約2倍メモリーを食う(でも今はQ8はメモリーが貴重だった頃の名残)</li>
+<li>Q8は気を付けないと色彩の分解能がよく不足する(今はこの方が問題)</li>
+<li>参考: 今はもうUnixのパッケージマネージャはQ16しか扱ってない</li>
+</ul>
+</li>
+<li><code>HDRI</code>は高画質処理用にカスタマイズした版(通常は不要)</li>
+<li><code>x86</code>と<code>x64</code>はCPU(OSと言い換えてもいい)の違い(<code>x86</code>は32bit、<code>x64</code>は64bit)</li>
+<li><code>dll</code>はDLL版、<code>static</code>はstatic版(違いはこの後詳しく説明)</li>
+<li><code>portable</code>はインストーラなしのstatic版</li>
+</ul>
+<blockquote>
+<p>Hi-Fiオーディオに例えるとQ8とQ16の違いはCD(16bit)とハイレゾ(例えば24bit)、HDRIは<a href="https://ja.wikipedia.org/wiki/Super_Audio_CD" target="_blank" rel="external">SACD</a>みたいなもの。Q8は最終結果に使うだけなら問題ないが、Q8で何回も繰り返し処理すると誤差が蓄積され見えてしまう。</p>
+</blockquote>
+<h3 id="1-DLL版"><a href="#1-DLL版" class="headerlink" title="(1) DLL版"></a>(1) DLL版</h3><blockquote>
+<p>以下「DLL版のメリットは特殊な場合だけでデメリットの方が多い」という主旨(やや長文)。余計なことは覚えたくないという人はスキップしてstatic版かportable版をインストールするといい。</p>
+</blockquote>
+<p>DLL版は共有可能なプログラムコード(DLL)を導入して最大限に利用することが特徴。この方式は並列実行時に全プロセスが同じコードメモリーを共有することによりメモリーを削減し起動時間を短縮できるメリットがある。</p>
+<blockquote>
+<p>複数起動する場合はDLLコードは最初の起動時のみメモリー上にロードされる。2つ目以降は最初にロードしたメモリー上のコードを再利用するため起動時間は短く、メモリーも節約できる。</p>
+</blockquote>
+<p>しかしDLLを使うソフトウエアは(自分の経験上)インストール時のトラブルが起きやすい。一番多いのは外部DLLの追加インストールが必要なケースで、現在のDLL版ImageMagickも(VC++2013の)vcomp120.dllを別途用意しないと動作しない。</p>
+<p>次に多いのは実行プログラム(.exe)の起動処理中にDLL(.dll)をロードできないケース。DLLロード時のモジュール検索でDLLファイルを見つけられないのが理由だが、その元となる原因はいくつも考えられる。</p>
+<p>典型的な原因の一つは環境変数のPathに問題がある場合で、DLLもパスを使って検索するため正しく設定されていないと実行できない。だが他にも色々なパターンがあり、経験上これが発生するとトラブルシューティングに時間を食うことが多い。</p>
+<blockquote>
+<p>Unixではコマンドは/usr/bin、共有ライブラリは/usr/libのようにインストール先がルールとして決められているが、Windowsにはそれがないのがそもそもの原因。そのためパスを使ってDLLを検索するが見つからないというのが典型的パターン。</p>
+</blockquote>
+<p>ちなみに自分は長年使っているがまだDLL版でなければという状況に出会ったことは一度もない。だが数年に一回程度気まぐれでDLL版を試してみるとかなりの確率で何かしらトラブルになる。</p>
+<p><strong>まとめ: DLL版はインストールのトラブルリスクが大きく、効率のメリットは乏しい。</strong></p>
+<blockquote>
+<p>ただし以上はコマンドツールとして利用する場合の話。Windows用アプリ開発の内部処理のためにImageMagickのライブラリを利用する場合はDLL版という選択しかない。しかしかなり高度なケースなのでここでは割愛する。</p>
+</blockquote>
+<h3 id="2-static版"><a href="#2-static版" class="headerlink" title="(2) static版"></a>(2) static版</h3><p>一方のstaic版は単独で動くように作られた実行ファイルで、DLLで生じる外部依存性やモジュール検索の問題は発生しない。また<code>C:\ImageMagic\convert.exe ...</code>のように絶対パスを指定すればPathを設定しなくても実行できる。</p>
+<p>DLL版と比較すると並列実行時に不利になる。static版の実行ファイル(例えばconvert.exe)は約16MBなので、作業時に数個のプロセスを同時実行する程度なら何も問題ない。だが仮に1000個同時だと起動だけで16GB近く消費する計算になる(おそらく実行困難)。</p>
+<p>こういう場合にぴったりなのがDLL版だが、こんな状況はサーバー以外では考えにくい(大量アクセスが同時発生するケース)。しかしサーバ用にWindowsを使う人は少ない(今はもうMicrosoft関係者だけだと思う)。</p>
+<p>個人で使用するのならDLL版をわざわざ使う理由は乏しい。並列実行もたかだか2-3個同時に実行する程度であれば効率はまず変わらない。比較しようとして実行時間を測定しても検出は困難だろう。</p>
+<p><strong>まとめ: static版の方がインストール時のトラブルが少なく、効率もDLL版とほぼ変わらない。</strong></p>
+<h3 id="3-portable版"><a href="#3-portable版" class="headerlink" title="(3) portable版"></a>(3) portable版</h3><p>しかし実はstatic版のインストーラにはPathの設定に関する微妙な問題がある(この後で解説)。またアンインストーラの出来も悪く、設定したPathを元に戻さない。</p>
+<p>そのため自分は現在portable版(インストーラなしのstatic版)を使っている。<a href="http://www.imagemagick.org/script/binary-releases.php#windows" target="_blank" rel="external">Windows Binary Release</a>の最後の2つで<code>portable-Q16-x86</code>が32bit用、<code>portable-Q16-x64</code>が64bit用。</p>
+<p>インストールは手動で行う必要があるが、難しいことは何もない。</p>
+<ul>
+<li>適当なフォルダに解凍</li>
+<li>必要があれば自分でPathを設定する(これで終わり)</li>
+</ul>
+<blockquote>
+<p>(自分もよく忘れるので備忘録) Windowsのパス設定は「コントロールパネル→システム→システムの詳細設定→環境変数(N)…」。</p>
+</blockquote>
+<p>アンインストールも自力だが、インストール時作業の逆を行えばいい。</p>
+<ul>
+<li>フォルダ丸ごと削除</li>
+<li>もしPathを設定していたら削除</li>
+</ul>
+<blockquote>
+<p>インストーラはよく知らない場所にファイルやレジストリを書き込むし、アンインストーラを実行しても元通りに掃除してくれないことが多い(ゴミが残る)。この方法だとそのような心配が全くないのが大きなメリット。</p>
+</blockquote>
+<h3 id="Path設定の注意"><a href="#Path設定の注意" class="headerlink" title="Path設定の注意"></a>Path設定の注意</h3><p>Windows版ImageMagickには次のコマンドがある(portable版の場合)。インストーラを使った場合はもう一つ<code>uninst001.exe</code>のような名前のコマンド(アンインストーラ)も生成される。</p>
+<pre><code>compare.exe    convert.exe  hp2xx.exe      magick.exe   stream.exe
+composite.exe  dcraw.exe    identify.exe   mogrify.exe
+conjure.exe    ffmpeg.exe   IMDisplay.exe  montage.exe
+</code></pre><p>これを見て分かる通りcompare, convert, streamなど他と衝突しそうな名前が多い。特にImageMagickで最も使用頻度が高いconvert.exeは同名のWindowsシステムコマンドと実際に衝突する。</p>
+<blockquote>
+<p>Unix系ではこの問題は発生しない。ImageMagickはUnixでは昔からある定番ツールなので、現行Unix系ソフトウエアはImageMagickのコマンド名と衝突しないように作られていると思ってよい。</p>
+<p>参考(ImageMagick History): <a href="http://www.imagemagick.org/script/history.php" target="_blank" rel="external">http://www.imagemagick.org/script/history.php</a></p>
+</blockquote>
+<p>Windowsのconvert.exeはFAT(旧式)→NTFS(現行)のファイルシステム変換。昔のコマンドで今ではほとんど使うことはない(あるとしたらFAT時代の古いHDDを後付けしてNTFSに変換する場合くらい)。</p>
+<p>一方ImageMagickのconvert.exeは最もよく使うコマンドなので、ImageMagickのインストーラはシステム環境変数のPath(システムパス)の先頭に設定している(自分を最優先にする)。これだとWindowsのconvert.exeは動かなくなるが実害はない。</p>
+<p>ただしImageMagickはWindowsではあまり有名ではないため、世の中のWindowsアプリはImageMagickに対する配慮はまずしていない。特にcompare.exeやconvert.exeという名前はよく衝突する。</p>
+<p>そのためすでに色々なソフトウエアをインストール済のWindowsパソコンでImageMagickのパスを最優先に設定すると別の何かが動かなくなる可能性が高くなる。実際に問題が発生した場合はImageMagickをユーザーパスの末尾(優先度最低)に移動すれば復旧できる。</p>
+<blockquote>
+<p>今までインストーラを使い何回かこれを経験した(記憶があいまいだが少なくとも2-3回…)。</p>
+</blockquote>
+<p>しかし今度はconvert.exeがWindowsコマンドに隠れてしまう。また衝突の原因になっていたImageMagickコマンドも同様に先にインストールしている同名コマンドの裏に隠れる。</p>
+<p>そういう場合は絶対パスを指定すれば実行できるが、毎回それでは使いにくいので補助用のバッチファイルを作るとよい。以下はその例。絶対パスを指定するのがまず第一のポイント(<code>C\ImageMagick</code>の部分は自分がインストールした場所に適宜変更)。</p>
+<pre><code>C:\ImageMagick\convert.exe %1 %2 %3 %4 %5 %6 %7 %8
+</code></pre><p>そしてこれをImageMagickと同じディレクトリに置けばよい…おっと忘れていた。最大のポイントはファイル名を他が使っていない名前にすること(例: <code>imconvert.bat</code>)。そうすればどことも衝突しない。</p>
+<p><strong>まとめ: パス設定に注意してportable版をインストールするのがベスト。インストーラ任せにせず自分で調べて設定した方が安全。</strong></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://higuma.github.io/2016/08/31/imagemagick-1/" data-id="cisq3d9t4000050vbydpm42ae" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ImageMagick/">ImageMagick</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/08/25/photo-gallery-test/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">フォトギャラリーのテスト</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p><a href="https://github.com/higuma">宮根裕司</a>のブログです。北海道生まれ。東京都国立市在住。プログラミングとデジタル信号処理が中心。時々気が向いたら芸術や音楽等。</p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Graphics/">Graphics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Photo/">Photo</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/ImageMagick/">ImageMagick</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Photo/">Photo</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/ImageMagick/" style="font-size: 10px;">ImageMagick</a> <a href="/tags/Photo/" style="font-size: 10px;">Photo</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/08/">August 2016</a><span class="sidebar-module-list-count">3</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2016/08/31/imagemagick-1/">ImageMagick(1:インストール編)</a>
+        </li>
+      
+        <li>
+          <a href="/2016/08/25/photo-gallery-test/">フォトギャラリーのテスト</a>
+        </li>
+      
+        <li>
+          <a href="/2016/08/24/blog-test/">ブログのテスト</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 宮根 裕司 (Yuji Miyane)<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
